@@ -1,0 +1,70 @@
+<header>
+    <nav class ="navbar navbar-expand-md navbar-light bg-dark">
+    <div><a class="navbar-brand"style="color: white;">Smart Cafeteria</a></div>
+    
+    <ul class="navbar-nav">
+       
+      <li><a routerLink="/registration" class="nav-link" style="color: white;">Register</a></li>
+      <li><a routerLink ="/" class="nav-link" style="color: white;">Login</a></li>
+      
+    
+    </ul>
+      </nav>
+    </header> 
+
+<div class="bg-img">
+
+    <div class="bootstrap-wrapper">
+        <div class="container mt">
+    
+         <div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="container text-center">
+    <img class="img-fluid" style="width: 100px;" src="/assets/smart-cafeteria.png" alt=""/>
+    
+        </div>
+        <div class="card">
+        <h1 class="text-center change">Login Here</h1>
+        <!-- Creating Form -->
+        <form #loginform="ngForm" (ngSubmit)="loginForUser()">
+            <small class="text-danger">{{msg}}</small>
+            <mat-form-field class="full-width change" appearance="outline">
+                <mat-label class="change">username</mat-label>
+                <input 
+                [(ngModel)]="user.username"
+                name="username"
+                class="change"
+                required
+                type="text" matInput/>
+            </mat-form-field>
+            <mat-form-field class="full-width change" appearance="outline">
+                <mat-label class="change">password</mat-label>
+                <input 
+                [(ngModel)]="user.password"
+                class="change"
+                name="password"
+                required
+                type="password" matInput/>
+            </mat-form-field>
+            <div class ="text-center">
+                <button type="submit" mat-raised-button color="warn">Login</button>
+                <button style="margin-left:10px;" type="reset" mat-raised-button color="warn">Reset</button>
+            </div>
+            
+    
+        </form>
+        <br>
+        <br>
+    
+        <div class ="text-center">
+            <button routerLink="/registration" mat-raised-button color="warn">Registration</button>
+    
+        </div>
+    </div>
+         </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    

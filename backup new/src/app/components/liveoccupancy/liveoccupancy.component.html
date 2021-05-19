@@ -1,0 +1,122 @@
+<div class="bg-img ">
+  
+  <header >
+    <nav class ="navbar navbar-expand-md navbar-light bg-dark">
+    <div ><a routerLink="/homepage" class="navbar-brand" style="color: white;">Smart Cafeteria</a></div>
+    
+    <ul class="navbar-nav ">
+       
+      <li ><a routerLink="/liveoccupancy" class="nav-link" style="color: white;">Live Occupancy</a></li>
+      <li  ><a routerLink="/historicaloccupancy" class="nav-link" style="color: white;">Historical Occupancy</a></li>
+   
+      
+      <li><a routerLink="/" class="nav-link" style="color: white;">LogOut</a></li>
+    
+    </ul>
+      </nav>
+    </header>
+    <div class="card">
+      <div class="change">
+      <div class ="text-center">
+        <div><h2>Live Occupancy</h2></div>
+      </div>
+    </div>
+    </div>
+    <div class="parents">
+      <div class="child">
+   
+        <div class="change">
+        <p style="font-size: 17px;">Dining Area</p>
+        </div>
+        <div class="change">
+        
+        
+          <div class="center">
+            <ul style="margin-top: 20px;">
+              <li style="color: green;">Normal</li>
+              <li style="color:yellow">Moderate</li>
+              <li style="color:red">Crowded</li>
+            </ul>
+            <div class="text-right">
+              
+          <span *ngFor="let lastOcc of lastOccupancyDetails">
+          <span [ngClass]="{
+            'positive' : lastOcc.count > 20,
+            'negative' : lastOcc.count < 20,
+            'moderate' : lastOcc.count >40
+         }"> {{lastOcc.count}}
+         </span>
+        </span>
+     
+     </div>
+    </div>
+        
+        </div>
+      </div>
+    
+      <div class="child">
+        <div class="change">
+        <p style="font-size: 17px;">Service Area</p>
+        
+        </div>
+        <div class="change">
+
+          <div class="center">
+           <ul style="margin-top: 20px;">
+              <li style="color: green;">Normal</li>
+              <li style="color:yellow">Moderate</li>
+              <li style="color:red">Crowded</li>
+            </ul>
+            <div class="text-right">
+        <span *ngFor="let lastSer of lastServiceOccupancyDetails">
+        <span [ngClass]="{
+          'positive' : lastSer.count > 20,
+          'negative' : lastSer.count < 20,
+          'moderate' : lastSer.count >40
+       }">{{lastSer.count}}
+       </span>
+      </span>
+     
+    </div>
+   </div>
+    
+          </div>
+    </div>
+      
+      
+    </div><br>
+    <div class="parents1">
+      <div class="child1">
+        
+        <div class="change">
+        <p style="font-size: 17px;">Dining Area</p>
+        </div> 
+        <div class="card">
+          <div class="change">
+        <div style="text-align: center;">
+          
+        <div id="line-chart" style="width:auto; height: 400px;"></div>
+        
+        </div>
+        </div>
+        </div>
+      </div>
+    
+      <div class="child1">
+        <div class="change">
+        <p style="font-size: 17px;">Service Area</p>
+        </div>
+        <div class="card">
+          <div class="change">
+            <div style="text-align: center;">
+              <div id="line-chartt" style="width:100%; height:400px;"></div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+      
+      
+    </div>
+</div>

@@ -1,0 +1,104 @@
+<header>
+  <nav class ="navbar navbar-expand-md navbar-light bg-dark">
+  <div><a class="navbar-brand" style="color: white;">Smart Cafeteria</a></div>
+  
+  <ul class="navbar-nav">
+     
+    <li><a routerLink="/registration" class="nav-link" style="color: white;">Register</a></li>
+    <li><a routerLink ="/" class="nav-link" style="color: white;">Login</a></li>
+    
+  
+  </ul>
+    </nav>
+  </header> 
+
+<div class="bg-img">
+  <div class="bootstrap-wrapper ak">
+      <div class="container mt">
+    
+       <div class="row">
+    
+    <div class="col-md-6">
+      <div class="card">
+      <h1 class="text-center change ">Registration</h1>
+        <form #loginform="ngForm" (ngSubmit)="registerUser()">
+          <small class="text-danger">{{msg}}</small>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label class="change">Full Name</mat-label>
+            <input 
+            type="name"
+            [(ngModel)]="user.fullname"
+            placeholder="Full Name"
+            name="fullname"
+            class="change"
+            id="fulname"
+            required
+            matInput/>
+        </mat-form-field>
+    
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label class="change">Company</mat-label>
+          <input 
+          [(ngModel)]="user.company"
+          placeholder="Company"
+          name="company"
+          class="change"
+          id="company"
+          required
+          type="text" matInput/>
+      </mat-form-field>
+    
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label class="change">Designation</mat-label>
+        <input 
+        [(ngModel)]="user.designation"
+        placeholder="Designation"
+        name="designation"
+        class="change"
+        id="designation"
+        required
+        type="text" matInput/>
+    </mat-form-field>
+        
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label class="change">Username</mat-label>
+      <input 
+      [(ngModel)]="user.username"
+      placeholder="Username"
+      name="username"
+      class="change"
+      id="username"
+      required
+      type="text" matInput/>
+    </mat-form-field>
+    
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label class="change">Password</mat-label>
+      <input 
+      [(ngModel)]="user.password"
+      placeholder="Password"
+      name="password"
+      class="change"
+      id="password"
+      required
+      type="password" matInput/>
+    </mat-form-field>
+    <br>
+    <br>
+         
+    <div class ="text-center">
+      <button mat-raised-button color="warn">Submit</button>
+      <button style="margin-left:10px;" type="reset" mat-raised-button color="warn">Reset</button>
+    </div>
+          
+        
+          
+        </form>
+        </div>
+    
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+   

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="bgblack">
+    <header>
+        <nav class ="navbar navbar-expand-md navbar-light bg-dark">
+        <div><a routerLink="/homepage" class="navbar-brand" style="color: white;">Smart Cafeteria</a></div>
+        
+        <ul class="navbar-nav">
+           
+
+            <li><a routerLink="/liveoccupancy" class="nav-link" style="color: white;">Live Occupancy</a></li>
+          <li><a routerLink="/historicaloccupancy" class="nav-link" style="color: white;">Historical Occupancy</a></li>
+          <li><a routerLink="/" class="nav-link" style="color: white;">LogOut</a></li>
+        
+        </ul>
+          </nav>
+        </header> 
+
+        <div class="bg-img">
+        <div class="card">
+          <div class="change">
+          <div class ="text-center">
+            <div><h2>Historical Occupancy</h2></div>
+          </div>
+        </div>
+        </div>
+        <div class="parents">
+          <div class="child">
+       
+            <div class="change">
+            <p>Dining Area</p>
+            </div>
+            <div class="change">
+           
+            
+              <div class="center">
+                <ul style="margin-top: 20px;">
+                  <li style="color: green;">Normal</li>
+                  <li style="color:yellow">Moderate</li>
+                  <li style="color:red">Crowded</li>
+                </ul>
+                <div class="text-right">
+                  
+                    <span *ngFor="let last of historylasthourdiningdata">
+                    <span [ngClass]="{
+                      'positive' : last.count > 20,
+                      'negative' : last.count < 20,
+                      'moderate' : last.count >40
+                   }">{{last.count}}
+                   </span>
+                  </span>
+               
+         </div>
+        </div>
+            
+            </div>
+          </div>
+        
+          <div class="child">
+            <div class="change">
+            <p>Service Area</p>
+            
+            </div>
+            <div class="change">
+              <div class="center">
+                <ul style="margin-top: 20px;">
+                  <li style="color: green;">Normal</li>
+                  <li style="color:yellow">Moderate</li>
+                  <li style="color:red">Crowded</li>
+                </ul>
+                <div class="text-right">
+                  <span *ngFor="let last of historylasthourservicedata">
+                    <span [ngClass]="{
+                      'positive' : last.count > 20,
+                      'negative' : last.count < 20,
+                      'moderate' : last.count >40
+                   }">{{last.count}}
+                   </span>
+                  </span>
+                </div>
+       
+       </div>
+        
+              </div>
+        </div>
+          
+          
+        </div><br>
+        
+	<div class="parent">
+    <div class="child">
+	<div class="limiter">
+		
+			<div class="wrap-table100">
+<div class="=change">
+				<div class="table100 ver3 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Date</th>
+									<th class="cell100 column1">Average Dining Area Count (per day)</th>
+									<th class="cell100 column1">Average Service Area Count (per day)</th>
+                                    <th class="cell100 column2">Trend</th>
+									
+									
+								</tr>
+							</thead>
+						</table>
+					</div>
+          
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<tr class="row100 body" *ngFor="let histdining of historicalDataDining; let histservice of historicalDataService">
+									<td class="cell100 column1">{{histdining.times}}  May 2021</td>
+									<td class="cell100 column1">{{histdining.count}}</td>
+									<td class="cell100 column1">{{histservice.count}}</td>
+                  <td class="cell100 column2"><button style="color: red;"  (click)="onCreate()"><i style="font-size:24px" class="fa">&#xf201;</i></button></td>
+								
+								</tr>
+
+								
+							
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <header>
+    <nav class ="navbar navbar-expand-md navbar-light bg-light">
+    <div><a routerLink="/homepage" class="navbar-brand">Smart Cafeteria</a></div>
+    
+    <ul class="navbar-nav">
+       
+      <li><a routerLink="/historicaloccupancy" class="nav-link">Historical Occupancy</a></li>
+      <li><a routerLink="/liveoccupancy" class="nav-link">Live Occupancy</a></li>
+      <li><a routerLink="/dashboard" class="nav-link">Dashboard</a></li>
+      <li><a routerLink="/" class="nav-link">LogOut</a></li>
+    
+    </ul>
+      </nav>
+    </header> 
+
+<div class="mt-5">
+    <table class="table table-bordered">
+        <thead class="thead">
+<tr>
+    <th>
+    Date
+    </th>
+    <th>
+    Average Dining Area Count (per hour)
+    </th>
+    <th>
+    Average Service Area Count (per hour)
+    </th>
+    <th>
+        Trend
+        </th>
+</tr>
+        </thead>
+        <tbody class="tbody">
+<tr *ngFor="let histdining of historicalDataDining; let histservice of historicalDataService">
+    <td>{{histdining.times}} May 2021</td>
+    <td>{{histdining.count}}</td>
+    <td>{{histservice.count}}</td>
+    <td><button>ak</button></td>
+</tr>
+        </tbody>
+    </table>
+</div> -->

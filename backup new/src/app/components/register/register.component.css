@@ -1,0 +1,23 @@
+.full-width{
+    width: 100%;
+}
+.ak{
+    padding-left: 400px;
+    padding-top: 40px;
+}
+.bg-img{
+    background: url('C:\Users\DELL\Desktop\frontttttt\loginpage\src\assets\regs.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+  .change{
+      color: aliceblue;
+  }
+  .card{
+    height:450px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    }
